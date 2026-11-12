@@ -1,0 +1,15 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: pgvector-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: msme_vector_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
